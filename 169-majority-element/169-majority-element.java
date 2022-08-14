@@ -1,5 +1,8 @@
 class Solution {
    int majorityElement(int[] num) {
+     //     Arrays.sort(nums);
+     // return nums[nums.length/2];
+       
     int majorityIndex = 0;
     for (int count = 1, i = 1; i < num.length; i++) {
         if(num[majorityIndex] == num[i]){
@@ -17,4 +20,5 @@ class Solution {
         
     return num[majorityIndex];
 }
+  
 }
