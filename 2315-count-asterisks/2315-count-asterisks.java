@@ -4,15 +4,16 @@ class Solution {
     public int countAsterisks(String s) {
         Stack<Character> st = new Stack<>();
         int count =0;
+        int start = 0;
         for (int i = 0; i < s.length(); i++) {
-            if(st.isEmpty() && s.charAt(i) == '*'){
+            if(start == 0 && s.charAt(i) == '*'){
                 count++;
             }
-            if(st.isEmpty() && s.charAt(i) == '|'){
-                st.push('|');
+            if(s.charAt(i) == '|' && start ==0){
+                start = 1;
             }
-            else if(!st.isEmpty() && s.charAt(i) == '|'){
-                st.pop();
+            else if(start == 1 && s.charAt(i) =='|'){
+                start =0;
             }
 
         }
