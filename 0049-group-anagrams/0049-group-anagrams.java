@@ -12,7 +12,10 @@ class Solution {
     }
     public static List<List<String>> groupAnagrams(String[] strs) {
         List<List<String>> ans = new ArrayList<>();
-        
+           if (strs.length == 1) {
+            ans.add(Arrays.asList(strs));
+            return ans;
+        }
         String[] cpy = strs.clone();
         for (int i = 0; i < cpy.length; i++) {
             cpy[i] = sortString(cpy[i]);            
