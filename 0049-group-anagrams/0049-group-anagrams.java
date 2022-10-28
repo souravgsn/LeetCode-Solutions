@@ -12,7 +12,11 @@ class Solution {
     }
     public static List<List<String>> groupAnagrams(String[] strs) {
         List<List<String>> ans = new ArrayList<>();
-           if (strs.length == 1) {
+        if (strs == null || strs.length == 0) {
+            return ans;
+        }   
+        
+        if (strs.length == 1) {
             ans.add(Arrays.asList(strs));
             return ans;
         }
