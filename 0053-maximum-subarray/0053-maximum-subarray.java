@@ -8,29 +8,18 @@ class Solution {
         }
         int ans =nums[n];
         
-        boolean na = true;
-       
-       for(int i =0 ;i<= n ;i++ ){
-           if(nums[i] > 0){
-               na = false;
-               break;
-           }
-       }
-       
-       if(na == true){ 
-           int min = nums[n];
-           for(int i = 0 ;i<=n ;i++){
-               if(nums[i] > min){
-                   min = nums[i];;
-               }
-           }
-           return min;
-       }
-       
-       
-       while(nums[n] < 0){
+       int max = -10000;
+       while(nums[n] < 0 && n >= 0){
+           
+           if(nums[n] > max){
+            max = nums[n];
+           }   
            n--;
+           if( n < 0){
+            return max;
+           }
        }
+       
        
        int sum = nums[n];
        
