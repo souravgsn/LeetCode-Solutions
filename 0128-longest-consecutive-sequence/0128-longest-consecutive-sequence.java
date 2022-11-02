@@ -5,21 +5,21 @@ class Solution {
         }
         
         Arrays.sort(nums);
-        
-        int ans = 1;
+        int ans =1 ;
+        int count = 1;
         int prev = nums[0];
-        int cur = 1;
-        
-        for(int i = 1;i < nums.length;i++){
-            if(nums[i] == prev+1){
-                cur++;
+        for(int i=1; i<nums.length ;i++){
+            if(nums[i] == prev + 1){
+                count++;
             }
             else if(nums[i] != prev){
-                cur = 1;
+                count = 1;
             }
-            prev = nums[i];
-            ans = Math.max(ans, cur);
+            
+            prev  = nums[i];
+            ans = Math.max(ans , count);
         }
         return ans;
+       
     }
 }
