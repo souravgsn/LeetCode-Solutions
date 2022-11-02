@@ -1,28 +1,19 @@
-import java.util.PriorityQueue;
-import java.util.Queue;
-
 class Solution {
     public int[] rearrangeArray(int[] nums) {
+        int[] ans = new int[nums.length];
+        int i =0;
+        int j =1;
+        for(int n : nums){
+            if(n > 0){
+                ans[i] = n;
+                i+=2;
+            }
+            if(n < 0){
+                ans[j] =n;
+                j+=2;
+            }
+        }
         
-        Queue<Integer> pve = new LinkedList<>();
-        Queue<Integer> nve = new LinkedList<>();
-
-        for (int num : nums) {
-            if(num > 0){
-                pve.add(num);
-            }else{
-                nve.add(num);
-            }
-        }
-
-        for(int i=0 ;i< nums.length ;i++){
-            if( i%2 == 0){
-                nums[i] = pve.remove();
-            }else{
-                nums[i] = nve.remove();
-            }
-
-        }
-        return nums;
+        return ans;
     }
 }
