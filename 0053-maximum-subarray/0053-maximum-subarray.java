@@ -1,8 +1,9 @@
-import java.util.*;
 class Solution {
-   public int maxSubArray(int[] nums) {
+    public int maxSubArray(int[] nums) {
+        int sum = 0 ;
+        int maxi = nums[0];
         
-        int n = nums.length-1;
+          int n = nums.length-1;
         if(n == 0){
             return nums[0];
         }
@@ -19,22 +20,14 @@ class Solution {
             return max;
            }
        }
-       
-       
-       int sum = nums[n];
-       
-       for(int i =n-1 ;i>=0;i--){
-           
-            ans = Math.max(sum, ans);
-            if(nums[i] + sum <= 0){
-                sum = 0;
-            }else{
-                sum += nums[i];
-            }
-
+        
+        for(int i =0 ;i< nums.length;i++){
+            sum+= nums[i];
+            if(sum < 0 ) sum =0;
+            if(sum > maxi ) maxi = sum;
+            
         }
-       
-        return Math.max(sum, ans);
+        return maxi;
+        
     }
-    
 }
