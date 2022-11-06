@@ -7,12 +7,10 @@ class Solution {
         int count = 0; 
         if(first.length() == 0 || last.length() == 0) return "";
         for (int i = 0; i < first.length(); i++) {
-            if(first.charAt(i) == last.charAt(i)){
-                count++;
-            }else{
-                break;
+            if(first.charAt(i) != last.charAt(i)){
+                return first.substring(0,i);
             }
-            
+            count++;
         }
         if(count != 0 ){
             return first.substring(0,count);
