@@ -5,10 +5,12 @@ class Solution {
         Map<Character, Boolean> mapt = new HashMap<>();
         
         for(int i = 0; i< s.length(); i++) {
-            if(maps.containsKey(s.charAt(i))) {
-                if(maps.get(s.charAt(i)) != t.charAt(i)) return false;
+            char ch1 = s.charAt(i);
+            char ch2 = t.charAt(i);
+            if(maps.containsKey(ch1)) {
+                if(maps.get(ch1) != ch2) return false;
             }
-            else if(mapt.containsKey(t.charAt(i))) {
+            else if(mapt.containsKey(ch2)) {
                  return false;
             }
             else {
