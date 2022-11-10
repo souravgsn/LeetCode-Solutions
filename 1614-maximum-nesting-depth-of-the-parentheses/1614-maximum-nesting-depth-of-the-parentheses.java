@@ -5,10 +5,12 @@ class Solution {
         for (int i = 0; i < s.length(); i++) {
             if(s.charAt(i) == '('){
                 count++;
+                maxcount = Math.max(maxcount,count);
+                
             }
 
             if(s.charAt(i) == ')'){
-                maxcount = Math.max(maxcount, count);
+               
                 count--;
             }
         }
